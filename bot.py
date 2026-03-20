@@ -2,9 +2,6 @@ import os
 import discord
 from discord.ext import commands
 
-TOKEN = os.getenv("DISCORD_TOKEN")
-client.run(TOKEN)
-
 intents = discord.Intents.default()
 intents.message_content = True  # REQUIRED for reading messages
 
@@ -24,3 +21,6 @@ async def on_message(message):
         await message.channel.send("You tagged me! I'm alive on Railway.")
 
     await bot.process_commands(message)
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+bot.run(TOKEN)
